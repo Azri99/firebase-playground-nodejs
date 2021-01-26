@@ -1,12 +1,13 @@
 const express = require('express');
-const storage = require('../services/firebase/storage');
+const FirebaseStorage = require('../services/firebase/storage');
 const router = express.Router();
 
 router.get('/', async (req, res)  => { 
-  const respon = await storage.upload('hello.txt', {
-    destination : 'wakanda/hello-newfiles.txt'
-  });
-  res.json(respon);
+  const storage = new FirebaseStorage();
+  const respon_upload = await storage.uploadFile('azure-firebase/', 'Erd.png');
+  const respon_get = await storage.getUploadFiles();
+  res.json(respon_get);
+
 });
 
 module.exports = router;

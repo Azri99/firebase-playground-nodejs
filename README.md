@@ -7,7 +7,8 @@
 
 3) ``` npm install firebase-admin ``` 
 
-4)```.env`` for firebase ```services.json``` must in one line
+4) ```.env``` for firebase ```services.json``` must in one line
+
 
 
 ## Run
